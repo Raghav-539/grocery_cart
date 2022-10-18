@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Cart</title>
+
+    <!--  external css -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- favicon icon link -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <!-- bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    
+    <div class="container-fluid" id="header">
+        <div class="row">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"> <i class="fa-solid fa-cart-shopping"></i> Grow Cart </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"> About Us </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"> Contact </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"> Sign up </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" id="cart"> Cart <i class="fa-solid fa-cart-plus"></i> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- products navabr -->
+            <nav class="navbar navbar-expand-lg"  style="background-color: #b9e2ff;">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPro" aria-controls="navbarPro" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarPro">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#top_deals"> Top Deal's </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#categories"> Categories </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#offer"> Offer's </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#beverages"> Beverages </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#foodgrains"> FoodGrains </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#snacks"> Snacks </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#fruits"> Fruits </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#vegetables"> Vegetables </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#chocolates"> Choclate's </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#dairys"> Dairy </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#bakerys"> Bakery </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#biscuits"> Biscuits </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#maggies"> Noodles </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>    
+
+    <!-- main div -->
+
+    <div class="main">
+        
+        <!-- cart modal -->
+        <div class="cart-modal-overlay">
+            <div class="cart-modal">
+                <i id="close-btn" class="fas fa-times"></i>
+                <div class="product-rows">  </div>
+                <div class="total">
+                    <h1 class="cart-total">TOTAL</h1>
+                    <span class="total-price"> &#8377; 0</span>
+                    <button class="purchase-btn">PURCHASE</button>
+                </div>
+              </div>
+        </div>
+        
+        <!-- carousel -->
+        <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/banner/grow_cart.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/banner/food_grains.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/banner/fruits.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/banner/beverage.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/banner/food_grains2.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- banner-->
+        <figure>
+            <img src="./images/banner/banner1.png" class="display" alt="banner1">
+        </figure>
+
+        <!-- top deals-->
+        <div class="cards">
+            <section id="top_deals">
+                <h2>--- Top Deal's ---</h2>
+
+                <div class="card-offer">
+                    <div class="images">
+                        <figure>
+                            <img class="product-image" src="./images/bakery/amul_nut_cookies.jpg" alt="nut cookies">
+                            <figcaption> Price &#8377; <span  class="product-price" > 69.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                        <figure>
+                            <img class="product-image" src="./images/beverages/amul_lassi.jpg" alt="lassi">
+                            <figcaption> Price &#8377; <span  class="product-price" > 39.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                        <figure>
+                            <img class="product-image" src="./images/pulses/lobhia_dal.jpg" alt="dal lobhia">
+                            <figcaption> Price &#8377; <span  class="product-price" > 64.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                        <figure>
+                            <img class="product-image"src="./images/foodgrains/dry_fruits.jpg" alt="dry fruits">
+                            <figcaption> Price &#8377; <span  class="product-price" > 239.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                        <figure>
+                            <img class="product-image" src="./images/diary/amul_pizza_cheese.jpg" alt="pizza cheese">
+                            <figcaption> Price &#8377; <span  class="product-price" > 199.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                        <figure>
+                            <img class="product-image" src="./images/snacks/bingo.jpg" alt="bingo">
+                            <figcaption> Price &#8377; <span  class="product-price" > 120.00   </span> </figcaption> <br>
+                            <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- banners & cards -->
+        <section class="banners">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="#beverages"> <img src="./images/cards/breverage_card.jpg" alt="beverage"> </a>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <a href="#chocolates"> <img src="./images/cards/chocolate_card.jpg" alt="chocolate"> </a>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="#foodgrains"> <img src="./images/cards/foodgrain_card.jpg" alt="food grains"> </a>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <a href="#biscuits"> <img src="./images/cards/snacks_card.jpg" alt="snacks"> </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <!-- categories -->
+        <div class="cards">
+            <section id="categories">
+                <h2>--- Shop By Categories ---</h2>
+
+                <div class="card-offer">
+                    <div class="images">
+                        <figure>
+                            <a href="#beverages"> <img src="./images/categories/beveragescorner.jpg" alt="beverage"> </a>
+                        </figure>
+                        <figure>
+                            <a href="#dairys"> <img src="./images/categories/dairy&bakery.jpg" alt="dairy"> </a>
+                        </figure>
+                        <figure>
+                            <a href="#foodgrains"> <img src="./images/categories/foodgrains&oils.jpg" alt="food grains"> </a>
+                        </figure>
+                        <figure>
+                            <a href="#fruits"> <img src="./images/categories/fruits&veg.jpg" alt="fruits"> </a>
+                        </figure>
+                        <figure>
+                            <a href="#snacks"> <img src="./images/categories/snacksfood.jpg" alt="snacks"> </a>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- banners & cards -->
+        <section class="banners">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="#chocolates"> <img src="./images/cards/chocolate_card2.jpg" alt="chocolate"> </a>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <a href="#dairys"> <img src="./images/cards/dairycard.jpg" alt="dairy"> </a>
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="#fruits"> <img src="./images/cards/fruits_card.jpg" alt="fruits"> </a>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <a href="#maggies"> <img src="./images/cards/maggi_card.jpg" alt="maggie"> </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- offers -->
+        <div class="cards">
+            <section id="offer">
+                <h2>--- Offers on daily essentials ---</h2>
+
+                <div class="card-offer">
+                    <div class="images">
+                        <figure>
+                            <a href="#bakerys"> <img src="./images/offers/bakery.png" alt="bakery"> </a> <br>
+                            <figcaption>Bakery Products</figcaption> 
+                        </figure>
+                        <figure>
+                            <a href="#dairys"> <img src="./images/offers/dairy.png" alt="dairy"> </a> <br>
+                            <figcaption> Dairy </figcaption> 
+                        </figure>
+                        <figure>
+                            <a href="#foodgrains"> <img src="./images/offers/foodgrainss.png" alt="food grains"> </a> <br>
+                            <figcaption>Food Grains</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="#pulses"> <img src="./images/offers/pulses.png" alt="pulses"> </a> <br>
+                            <figcaption>Dals & Pulses</figcaption> 
+                        </figure>
+                        <figure>
+                            <a href="#beverages"> <img src="./images/offers/beverages.png" alt="beverage"> </a> <br>
+                            <figcaption> Energy & Soft Drinks </figcaption> 
+                        </figure>
+                        <figure>
+                            <a href="#snacks"> <img src="./images/offers/snacks.png" alt="snacks"> </a> <br>
+                            <figcaption>Snacks & Namkeen</figcaption> 
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- banners & cards -->
+        <section class="banners">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <figure>
+                            <a href="#snacks"> <img src="./images/cards/snacks_card2.jpg" alt="snacks"> </a>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <a href="#beverages"> <img src="./images/cards/breverage_card.jpg" alt="beverage"> </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- choclate section  -->
+
+        <!-- banner-->
+        <figure id="chocolates">
+            <img src="./images/banner/choclates.jpeg" class="display" alt="chocloate">
+        </figure>
+
+        <div>
+            <section id="chocolate">
+                <div class="images">
+                    <figure>
+                        <img src="./images/choclates/amul_fruit_nut.jpg" class="card-img-top product-image" alt="amul fruit nut">
+                        <figcaption> Amul Fruit & Nut Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 120.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/amul_sugar_free.jpg" class="card-img-top product-image" alt="amul sugar free">
+                        <figcaption> Amul Sugar Free Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_bubbly.jpg" class="card-img-top product-image" alt="bubbly">
+                        <figcaption> Cadbury Bubbly Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_mousse.jpg" class="card-img-top product-image" alt="mousse">
+                        <figcaption>Cadbury Mousse Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 70.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_oreo.jpg" class="card-img-top product-image" alt="oreo">
+                        <figcaption> Cadbury Oreo Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 159.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="chocolate">
+                <div class="images">
+                    <figure>
+                        <img src="./images/choclates/cadbury_brownville.jpg" class="card-img-top product-image" alt="brownville">
+                        <figcaption> Cadbury Brownvillet Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 80.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_bubbly.jpg" class="card-img-top product-image" alt="bubbly">
+                        <figcaption> Cadbury Bubbly Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_celebration_premium.jpg" class="card-img-top product-image" alt="premium">
+                        <figcaption> Cadbury Celebration Chocolate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 180.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/choclates/cadbury_champion_pack.jpg" class="card-img-top product-image" alt="pack">
+                        <figcaption> Cadbury Plain Dark Choclate </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 99.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+        <!-- fruits section  -->
+
+        <!-- banner-->
+        <figure id="fruits">
+            <img src="./images/banner/fruits_veg.jpeg" class="display" alt="fruits">
+        </figure>
+
+        <div>
+            <section id="fruit">
+                <div class="images">
+                    <figure>
+                        <img src="./images/fruits/apple.jpg" class="card-img-top fruit product-image" alt="apple">
+                        <figcaption> Apple 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 99.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/avocado.jpg" class="card-img-top fruit product-image" alt="avocado">
+                        <figcaption> Avocado 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/banana.jpg" class="card-img-top fruit product-image" alt="banana">
+                        <figcaption> Banana 6 pcs </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/kiwi.jpg" class="card-img-top fruit product-image" alt="kiwi">
+                        <figcaption> Kiwi 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 119.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/dragon_fruit.jpg" class="card-img-top fruit product-image" alt="dragon fruit">
+                        <figcaption> Dragon Fruit 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 109.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="fruit">
+
+                <div class="images">
+                    <figure>
+                        <img src="./images/fruits/blueberry.jpg" class="card-img-top fruit product-image" alt="blueberry">
+                        <figcaption> Blueberry 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 249.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/dates.jpg" class="card-img-top fruit product-image" alt="dates">
+                        <figcaption> Dates 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 199.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/orange.jpg" class="card-img-top fruit product-image" alt="orange">
+                        <figcaption> Orange 250 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/fruits/watermelon.jpg" class="card-img-top fruit product-image" alt="watermelon">
+                        <figcaption> Watermelon 2500 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+        <!-- beverages section  -->
+
+        <!-- banner-->
+        <figure id="beverages">
+            <img src="./images/banner/beverage.jpeg" class="display" alt="beverage">
+        </figure>
+
+
+        <div>
+            <section id="beverage">
+
+                <div class="images">
+                    <figure>
+                        <img src="./images/beverages/aamras.jpg" class="card-img-top bev product-image" alt="aamras">
+                        <figcaption> Aamras </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 60.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/alo_kiwi.jpg" class="card-img-top bev product-image" alt="kiwi juice">
+                        <figcaption> Alovera Kiwi Juice </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/amul_elaichi_milk.jpg" class="card-img-top bev product-image" alt="elaichi">
+                        <figcaption> Amul Elaichi Milkshake </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/monster_enegy_drink.jpg" class="card-img-top bev product-image" alt="monster">
+                        <figcaption> Monster Energy Drink </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 70.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/chocolate_milkshake.jpg" class="card-img-top bev product-image" alt="shake">
+                        <figcaption> Chocolate Milkshake </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 59.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="beverage">
+
+                <div class="images">
+                    <figure>
+                        <img src="./images/beverages/lipton.jpg" class="card-img-top bev product-image" alt="lipton">
+                        <figcaption> Lipton Green Tea </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 160.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/bru.jpg" class="card-img-top bev product-image" alt="bru">
+                        <figcaption> Bru Coffee </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/taj_mahal.jpg" class="card-img-top bev product-image" alt="taj">
+                        <figcaption> Taj Mahal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 150.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/beverages/taza.jpg" class="card-img-top bev product-image" alt="taza">
+                        <figcaption> Taaza Tea </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 119.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+                <!-- dal section  -->
+
+        <!-- banner-->
+        <figure id="pulses">
+            <img src="./images/banner/dal_pulses.jpeg" class="display" alt="pulses">
+        </figure>
+
+        <div>
+            <section id="pulse">
+                <div class="images">
+                    <figure>
+                        <img src="./images/pulses/masoor_dal.jpg" class="card-img-top product-image" alt="massor">
+                        <figcaption> Masoor Dal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 120.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/moong_dal.jpg" class="card-img-top product-image" alt="moong">
+                        <figcaption> Moong Dal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/soya_chunks.jpg" class="card-img-top product-image" alt="soya">
+                        <figcaption> Soya Chunks </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/white_channa.jpg" class="card-img-top product-image" alt="white">
+                        <figcaption> White Channa </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 179.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/rajma.jpg" class="card-img-top product-image" alt="rajma">
+                        <figcaption> Rajma </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="pulse">
+                <div class="images">
+                    <figure>
+                        <img src="./images/pulses/lobhia_dal.jpg" class="card-img-top product-image" alt="lobhia">
+                        <figcaption> Lobhia Dal  </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 90.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/channa_dal.jpg" class="card-img-top product-image" alt="channa">
+                        <figcaption> Channa Dal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 69.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/tur_dal.jpg" class="card-img-top product-image" alt="tur">
+                        <figcaption> Tur Dal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 60.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/pulses/white_peas.jpg" class="card-img-top product-image" alt="peas">
+                        <figcaption> White Peas </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 100.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+
+                </div>
+            </section>
+        </div>
+
+                <!-- vegetable section  -->
+
+        <!-- banner-->
+        <figure id="vegetables">
+            <img src="./images/banner/fruits_veg.jpeg" class="display" alt="vegetables">
+        </figure>
+
+        <div>
+            <section id="vegetable">
+                <div class="images">
+                    <figure>
+                        <img src="./images/vegetables/potato.jpg" class="card-img-top veg product-image" alt="potato">
+                        <figcaption> Potato</figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 30.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/bhendi.jpg" class="card-img-top veg product-image" alt="bhendi">
+                        <figcaption> Bhendi </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 49.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/brocalli.jpg" class="card-img-top veg product-image" alt="brocalli">
+                        <figcaption> Brocalli</figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/cabbage.jpg" class="card-img-top veg product-image" alt="cabbage">
+                        <figcaption> Cabbage </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 29.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/onion.jpg" class="card-img-top veg product-image" alt="onion">
+                        <figcaption> Onion </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 19.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="vegetable">
+                <div class="images">
+                    <figure>
+                        <img src="./images/vegetables/tomato.jpg" class="card-img-top veg product-image" alt="tomato">
+                        <figcaption> Tomato </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 30.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/coriander.jpg" class="card-img-top veg product-image" alt="coriander">
+                        <figcaption> Coriander </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 19.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/beans.jpg" class="card-img-top veg product-image" alt="beans">
+                        <figcaption> Beans</figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/vegetables/carrot.jpg" class="card-img-top veg product-image" alt="carrot">
+                        <figcaption> Carrot </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 29.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+                <!-- dairy section  -->
+
+        <!-- banner-->
+        <figure id="dairys">
+            <img src="./images/banner/dairy_bakery.jpeg" class="display" alt="diary">
+        </figure>
+
+        <div>
+            <section id="dairy">
+                <div class="images">
+                    <figure>
+                        <img src="./images/diary/gowardhan_panner.jpg" class="card-img-top product-image" alt="panner ">
+                        <figcaption> Gowardhan Panner </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 120.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/amul_ghee.jpg" class="card-img-top product-image" alt="ghee">
+                        <figcaption> Amul Ghee </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/amul_cheese_slicee.jpg" class="card-img-top product-image" alt="slice">
+                        <figcaption> Amul Cheese Slice </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/amul_curd.jpg" class="card-img-top product-image" alt="curd">
+                        <figcaption> Amul Masti Dahi </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 70.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/amul_butter.jpg" class="card-img-top product-image" alt="butter">
+                        <figcaption> Butter </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="dairy">
+                <div class="images">
+                    <figure>
+                        <img src="./images/diary/amul_kesar_shrikhand.jpg" class="card-img-top product-image" alt="shrikhand ">
+                        <figcaption> Amul Kesar Shrikhand  </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/mother_dairy_mishti_doi.jpg" class="card-img-top product-image" alt="mishti">
+                        <figcaption> Mother Dairy Mishti Doi </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/amul_elaichi_shrikhand.jpg" class="card-img-top product-image" alt="shrikhand">
+                        <figcaption> Amul Elaichi Shrikhand </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 130.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/diary/condensed_milk.jpg" class="card-img-top product-image" alt="milk">
+                        <figcaption> Milkmaid Condensed Milk </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 59.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+                <!-- foodgrains section  -->
+
+        <!-- banner-->
+        <figure id="foodgrains">
+            <img src="./images/banner/food_grains2.jpg" class="display" alt="foodgrains">
+        </figure>
+
+        <div>
+            <section id="foodgrain">
+                <div class="images">
+                    <figure>
+                        <img src="./images/foodgrains/fortune_bsmati_rice.jpg" class="card-img-top product-image" alt="rice">
+                        <figcaption> Fortune Basmati Rice </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 120.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/good_life_almonds.jpg" class="card-img-top product-image" alt="alomonds">
+                        <figcaption> Good Life Almonds </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 149.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/good_life_cashew.jpg" class="card-img-top product-image" alt="cashew">
+                        <figcaption> Good Life Cashew </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/good_life_kishmish.jpg" class="card-img-top product-image" alt="khismish">
+                        <figcaption> Good Life Kishmish </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/good_life_pistachios.jpg" class="card-img-top product-image" alt="pistachios">
+                        <figcaption> Good Life Pistachios </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 159.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="foodgrain">
+                <div class="images">
+                    <figure>
+                        <img src="./images/foodgrains/watermlon_seeds.jpg" class="card-img-top product-image" alt="seeds">
+                        <figcaption> Watermelon Seeds </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/dry_fruits.jpg" class="card-img-top product-image" alt="fruits">
+                        <figcaption> Dry Fruits </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 149.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/chia_seeds.jpg" class="card-img-top product-image" alt="seeds">
+                        <figcaption> Chia Seeds </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/foodgrains/sunflower_seeds.jpg" class="card-img-top product-image" alt="seeds">
+                        <figcaption> Sunflower Seeds</figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+                <!-- maggie section  -->
+
+        <!-- banner-->
+        <figure id="maggies">
+            <img src="./images/banner/maggie.jpeg" class="display" alt="maagie">
+        </figure>
+
+        <div>
+            <section id="maggie">
+                <div class="images">
+                    <figure>
+                        <img src="./images/noodles/chings_garlic.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Ching's Hot Garlic </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 60.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/chings_schezwan.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Ching's Schezwan </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 59.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/top_ramen.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Top Ramen </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/chings_manchurian.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Ching's Manchurian </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 59.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/chings_hakka.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Ching's Hakka Noodles </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 89.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="maggie">
+                <div class="images">
+                    <figure>
+                        <img src="./images/noodles/maggi_280.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Maggie 280 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/yipee_saucy.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Yippee Saucy </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 51.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/maggi_70.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Maggie 70 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 20.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/noodles/yippe_405.jpg" class="card-img-top product-image" alt="noodles">
+                        <figcaption> Yippee 405 g </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 59.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+                <!-- bakery section  -->
+
+        <!-- banner-->
+        <figure id="bakerys">
+            <img src="./images/banner/dairy_bakery.jpeg" class="display" alt="bakery">
+        </figure>
+
+        <div>
+            <section id="bakery">
+                <div class="images">
+                    <figure>
+                        <img src="./images/bakery/blueberry_cookies.jpg" class="card-img-top product-image" alt="cookie">
+                        <figcaption> Blue Berry Cookies </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 120.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/muffets_brown_bread.jpg" class="card-img-top product-image" alt="bread">
+                        <figcaption> Muffet Brown Bread </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/bazic_zeera_cookies.jpg" class="card-img-top product-image" alt="cookie">
+                        <figcaption> Bazic Zeera Cookies </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 140.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/bazic_chocolate_cookies.jpg" class="card-img-top product-image" alt="cookie">
+                        <figcaption> Bazic Choclate Cookies </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 179.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/amul_nut_cookies.jpg" class="card-img-top product-image" alt="cookie">
+                        <figcaption> Amul Nut Cookies </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 150.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="bakery">
+                <div class="images">
+                    <figure>
+                        <img src="./images/bakery/britania_rusk_totst.jpg" class="card-img-top product-image" alt="rusk">
+                        <figcaption> Britania Rusk Toast </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/wibs_bread.jpg" class="card-img-top product-image" alt="bread">
+                        <figcaption> Wibs Bread </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 49.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/parle_elaihi_rusk.jpg" class="card-img-top product-image" alt="rusk">
+                        <figcaption> Parle Elaichi Rusk </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/bakery/parle_rusk.jpg" class="card-img-top product-image" alt="rusk">
+                        <figcaption> Parle Rusk </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+
+                </div>
+            </section>
+        </div>
+
+                <!-- snacks section  -->
+
+        <!-- banner-->
+        <figure id="snacks">
+            <img src="./images/banner/snacks.jpeg" class="display" alt="snacks">
+        </figure>
+
+        <div>
+            <section id="sanck">
+                <div class="images">
+                    <figure>
+                        <img src="./images/snacks/50_50.jpg" class="card-img-top product-image" alt="50-50">
+                        <figcaption> 50-50 Biscuits </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/bikaji_kuch.jpg" class="card-img-top product-image" alt="kuch">
+                        <figcaption> Bikaji Kuch Kuch </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/bingo.jpg" class="card-img-top product-image" alt="bingo">
+                        <figcaption>  </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/20_20.jpg" class="card-img-top product-image" alt="20-20">
+                        <figcaption> 20-20 Biscuits </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 29.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/bikaji_allo_bhujia.jpg" class="card-img-top product-image" alt="bhujia">
+                        <figcaption> Bikaji Allo Bhujia </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 129.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="sanck">
+                <div class="images">
+                    <figure>
+                        <img src="./images/snacks/bikaji_moong_dal.jpg" class="card-img-top product-image" alt="moong">
+                        <figcaption> Bikaji Moong Dal </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/bourbun.jpg" class="card-img-top product-image" alt="bourbon">
+                        <figcaption> Bourbon </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/achari_mathi.jpg" class="card-img-top product-image" alt="mathi">
+                        <figcaption> Achari Mathi </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 60.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/bikaji_khatta_meetha.jpg" class="card-img-top product-image" alt="bhujia">
+                        <figcaption> Bikaji Khatta Meetha </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 130.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+            <!-- biscuit section  -->
+
+        <!-- banner-->
+        <figure id="biscuits">
+            <img src="./images/banner/biscuits.jpeg" class="display" alt="biscuits">
+        </figure>
+
+        <div>
+            <section id="biscuit">
+                <div class="images">
+                    <figure>
+                        <img src="./images/snacks/mom_magic.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption>Mom Magic Biscuits </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/happy_happy.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Happy Happy </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 52.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/good_day_choco.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Good Day Choco </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 40.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/hide_seek_4.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Hide & Seek </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/monaco.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Monaco </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 20.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section id="sanck">
+                <div class="images">
+                    <figure>
+                        <img src="./images/snacks/oreo.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Oreo </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 50.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks//parle_g.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Parle G </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 20.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure> 
+                        <img src="./images/snacks/unibic_choco_chip.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Unibic Choco Chip </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 60.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                    <figure>
+                        <img src="./images/snacks/good_day.jpg" class="card-img-top product-image" alt="biscuit">
+                        <figcaption> Good Day </figcaption>
+                        <figcaption> Price &#8377; <span class="product-price"> 39.00 </span></figcaption>
+                        <button type="button" class="btn btn-primary buttons">Add to Cart &nbsp; <i class="fa-solid fa-cart-plus"></i> </button>
+                    </figure>
+                </div>
+            </section>
+        </div>
+
+        <!-- footer -->
+
+            <div class="top">
+                <a href="#header"><h3>To top <i class="fas fa-angle-double-up"></i></h3></a>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-col">
+                    <h4>Know Us</h4>
+                    <ul>
+                        <li><a href="#">About Website</a></li>
+                        <li><a href="#">Our portfolio</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Work with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help!</h4>
+                    <ul>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order status</a></li>
+                        <li><a href="#">Payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Policy</h4>
+                    <ul>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="./pages/terms_use.html">Terms of use</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="./pages/privacy_policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </footer>
+
+            <div class="top">
+                <h3 style="color: white;">  &copy; 2022 Grow Cart.  All rights reserved.  </h3>
+            </div>
+
+    </div>
+
+    <!-- external linking -->
+    <script src="./script.js"> </script>
+</body>
+</html>
